@@ -67,9 +67,11 @@ h2 {
     text-decoration: none;
     color: #ffffff;
     transition: all 0.3s ease;
+    
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    height: 100%;      
+    box-sizing: border-box; 
 }
 
 .menu-card:hover {
@@ -134,4 +136,5 @@ h2 {
 .contact-item a:hover {
     border-color: #1e90ff;
     color: #1e90ff;
+
 }
