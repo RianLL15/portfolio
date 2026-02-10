@@ -1,45 +1,54 @@
 const meusCursos = [
     {
-        titulo: "TextTextTex",
-        instituicao: "TextTextTex",
+        titulo: "Python para Análise de Dados",
+        instituicao: "Data Science Academy",
         status: "concluido",
-        descricao: "TextTextTexTextTextTex",
+        descricao: "Formação focada em manipulação de dados, estatística aplicada e criação de análises com bibliotecas do ecossistema Python.",
         data: "Jan 2024 - Mar 2024",
-        tecnologias: ["Text"]
+        tecnologias: ["Python", "Pandas", "NumPy"]
     },
     {
-        titulo: "TextTextTex",
-        instituicao: "TextText",
+        titulo: "Java e Programação Orientada a Objetos",
+        instituicao: "Udemy",
         status: "em-progresso",
-        descricao: "TextTextTexTextTextTex",
+        descricao: "Estudo contínuo de fundamentos de orientação a objetos, boas práticas de arquitetura e desenvolvimento de aplicações robustas.",
         data: "Jun 2024 - Atual",
-        tecnologias: ["TextT"]
+        tecnologias: ["Java", "POO", "Clean Code"]
     },
     {
-        titulo: "Especialista SQL",
-        instituicao: "TextTextTexTextTextTex",
+        titulo: "Especialista em SQL",
+        instituicao: "Alura",
         status: "para-iniciar",
-        descricao: "TextTextTexTextTextTexTextTextTex",
-        data: "Previsto para Ago 2024",
-        tecnologias: ["TextTextTex", "TextTextTexTextTextTex"]
+        descricao: "Trilha prevista para aprofundamento em modelagem relacional, otimização de consultas e integração com ferramentas analíticas.",
+        data: "Planejado para 2026",
+        tecnologias: ["SQL", "Modelagem de Dados"]
     }
 ];
 
 function renderCursos(filter = 'all') {
     const list = document.getElementById('course-list');
+    if (!list) return;
+
     list.innerHTML = '';
 
-    meusCursos.forEach(curso => {
+    const cursosFiltrados = meusCursos.filter(
+        (curso) => filter === 'all' || curso.status === filter
+    );
 
-        if (filter !== 'all' && curso.status !== filter) {
-            return;
-        }
+    if (!cursosFiltrados.length) {
+        list.innerHTML = '<p class="course-desc">Nenhum curso encontrado para este filtro.</p>';
+        return;
+    }
 
-        let statusLabel = curso.status === 'concluido' ? 'Concluído' :
-            curso.status === 'em-progresso' ? 'Em Progresso' : 'Para Iniciar';
+    cursosFiltrados.forEach(curso => {
+        const statusLabel = curso.status === 'concluido'
+            ? 'Concluído'
+            : curso.status === 'em-progresso'
+                ? 'Em Progresso'
+                : 'Para Iniciar';
 
         list.innerHTML += `
-            <div class="course-card border-${curso.status}">
+            <article class="course-card border-${curso.status}">
                 <div class="course-header">
                     <div>
                         <h3 class="course-title">${curso.titulo} <span class="status-badge bg-${curso.status}">${statusLabel}</span></h3>
@@ -51,7 +60,7 @@ function renderCursos(filter = 'all') {
                 <div class="tags-container">
                     ${curso.tecnologias.map(t => `<span class="tag-tech">${t}</span>`).join('')}
                 </div>
-            </div>
+            </article>
         `;
     });
 }

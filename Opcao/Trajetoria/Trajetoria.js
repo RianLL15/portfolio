@@ -3,13 +3,21 @@ const experiencias = [
         cargo: "Projetista",
         empresa: "Escritório de Planejamento",
         tipo: "Estágio",
-        periodo: "Abr de 2018 - Jun de 2021 (2 anos 3 meses)",
-        cidade: "Florianóis, SC",
+        periodo: "Abr 2018 - Jun 2021 (2 anos e 3 meses)",
+        cidade: "Florianópolis, SC",
         detalhe: "Projetos e Planejamento Estrutural",
         icon: "📐"
+    },
+    {
+        cargo: "Estudante de Ciência da Computação",
+        empresa: "Desenvolvimento Acadêmico e Projetos Autorais",
+        tipo: "Formação",
+        periodo: "2022 - Atual",
+        cidade: "Florianópolis, SC",
+        detalhe: "Projetos em Python, Java e automação de dados",
+        icon: "💻"
     }
-
-]
+];
 
 function renderizarTrajetoria() {
     const timeline = document.getElementById('timeline');
@@ -20,8 +28,7 @@ function renderizarTrajetoria() {
     const experienciasOrdenadas = [...experiencias].reverse();
 
     experienciasOrdenadas.forEach((exp, index) => {
-        const card = document.createElement('div');
-
+        const card = document.createElement('article');
         const isAlt = index % 2 !== 0;
         card.className = `exp-card ${isAlt ? 'alt-color' : ''}`;
 
@@ -41,4 +48,4 @@ function renderizarTrajetoria() {
     });
 }
 
-renderizarTrajetoria();
+document.addEventListener('DOMContentLoaded', renderizarTrajetoria);
