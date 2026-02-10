@@ -4,41 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Competencias.css">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="Competencias.css">
     <title>Competências Técnicas - Rian Leicinio</title>
-
 </head>
 
 <body>
     <script src="Competencias.js" defer></script>
-    <div class="container">
-        <div class="page-icon">🛠️</div>
-        <h1>Competências e Cursos</h1>
-
-        <a href="../../index.html" class="nav-back">
-            <span class="text">← Voltar ao Menu Principal</span>
-        </a>
+    <main class="container">
+        <header class="page-header">
+            <div class="page-icon">🛠️</div>
+            <h1>Competências e Cursos</h1>
+            <a href="../../index.html" class="nav-back">← Voltar ao Menu Principal</a>
+        </header>
 
         <div class="highlight-box">
-            Nesta área, registro minha jornada de aprendizado contínuo. Aqui você encontra as certificações e cursos que
-            realizei para dominar novas ferramentas e linguagens, transformando o conhecimento teórico em habilidades
-            práticas para o mercado.
+            Registro da minha jornada de aprendizado contínuo com foco em base técnica sólida, aplicação prática e visão
+            de mercado.
         </div>
 
         <hr>
 
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="updateFilter('all', this)">Todos</button>
-            <button class="filter-btn" onclick="updateFilter('concluido', this)">✅ Concluídos</button>
-            <button class="filter-btn" onclick="updateFilter('em-progresso', this)">⏳ Em Progresso</button>
-            <button class="filter-btn" onclick="updateFilter('para-iniciar', this)">🚀 Para Iniciar</button>
-        </div>
+        <section class="panel">
+            <h2 class="section-title">Status dos cursos</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="updateFilter('all', this)">Todos</button>
+                <button class="filter-btn" onclick="updateFilter('concluido', this)">✅ Concluídos</button>
+                <button class="filter-btn" onclick="updateFilter('em-progresso', this)">⏳ Em Progresso</button>
+                <button class="filter-btn" onclick="updateFilter('para-iniciar', this)">🚀 Planejados</button>
+            </div>
 
-        <div id="course-list" class="course-grid"></div>
-
-        <hr>
-    </div>
+            <div id="course-list" class="course-grid"></div>
+        </section>
+    </main>
 </body>
-
 
 </html>
