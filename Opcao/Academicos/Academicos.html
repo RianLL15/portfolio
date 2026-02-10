@@ -4,38 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Academicos.css">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="Academicos.css">
     <title>Projetos - Rian Leicinio</title>
 </head>
 
 <body>
     <script src="Academicos.js" defer></script>
-    <div class="container">
-        <div class="page-icon">📚</div>
-        <h1>Projetos e Evolução</h1>
-
-        <a href="../../index.html" class="nav-back">← Voltar ao Menu Principal</a>
+    <main class="container">
+        <header class="page-header">
+            <div class="page-icon">📚</div>
+            <h1>Projetos e Evolução</h1>
+            <a href="../../index.html" class="nav-back">← Voltar ao Menu Principal</a>
+        </header>
 
         <div class="highlight-box">
-            Nesta seção, documento minha jornada de evolução técnica através da aplicação prática de conceitos de
-            Ciência da Computação. Cada projeto, seja acadêmico ou autoral, reflete o compromisso em desenvolver
-            soluções escaláveis, estruturadas e focadas na resolução de problemas reais com alta performance.
+            Aqui organizo projetos acadêmicos e autorais que representam minha evolução prática em desenvolvimento,
+            dados e resolução de problemas.
         </div>
 
         <hr>
 
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="updateFilter('all', this)">Todos</button>
-            <button class="filter-btn" onclick="updateFilter('academico', this)">📚 Faculdade</button>
-            <button class="filter-btn" onclick="updateFilter('pessoal', this)">💡 Pessoais</button>
-        </div>
-
-        <div id="project-list"></div>
-
-        <hr>
-
-    </div>
+        <section class="panel">
+            <h2 class="section-title">Filtrar projetos</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="updateFilter('all', this)">Todos</button>
+                <button class="filter-btn" onclick="updateFilter('academico', this)">📚 Faculdade</button>
+                <button class="filter-btn" onclick="updateFilter('pessoal', this)">💡 Pessoais</button>
+            </div>
+            <div id="project-list"></div>
+        </section>
+    </main>
 </body>
-
 
 </html>
