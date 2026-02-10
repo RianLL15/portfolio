@@ -1,59 +1,22 @@
-.timeline {
-    position: relative;
-    padding: 0.5rem 0;
-    margin-left: 0.85rem;
-    border-left: 2px solid var(--border);
-}
-
+.timeline { position: relative; margin-left: .8rem; border-left: 2px solid var(--line); padding-left: .2rem; }
 .exp-card {
-    background: var(--bg-surface-2);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
+    margin: 0 0 .8rem 1.1rem;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--primary);
     border-radius: var(--radius-md);
-    margin: 0 0 0.8rem 1.2rem;
-    padding: 0.9rem;
+    background: linear-gradient(180deg, #121b36 0%, #182449 100%);
+    padding: .9rem;
     position: relative;
 }
-
 .timeline-dot {
-    position: absolute;
-    left: -1.78rem;
-    top: 1rem;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    width: .72rem; height: .72rem; border-radius: 50%;
+    background: var(--primary); position: absolute; left: -1.68rem; top: 1rem;
 }
-
-.exp-header {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    margin-bottom: 0.3rem;
-}
-
-.exp-icon {
-    font-size: 1rem;
-}
-
-.exp-card h3 {
-    margin: 0;
-    font-size: 1.02rem;
-}
-
-.exp-info {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-}
-
+.exp-header { margin-bottom: .3rem; }
+.exp-card h3 { margin: 0; font-size: 1.02rem; }
+.exp-info { color: var(--text-soft); font-size: .92rem; }
 .exp-tag {
-    margin-top: 0.55rem;
-    display: inline-block;
-    border-radius: 999px;
-    padding: 0.2rem 0.6rem;
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.35);
-    color: #93c5fd;
-    font-size: 0.74rem;
+    margin-top: .55rem; display: inline-block; font-size: .74rem;
+    color: #a4c9ff; background: #16366c; border: 1px solid #325ca2;
+    border-radius: 999px; padding: .18rem .55rem;
 }
