@@ -1,29 +1,28 @@
 const meusProjetos = [
     {
         titulo: "Análise de Dados Acadêmicos",
-        descricao: "Script em Python para processar dados de desempenho estudantil e gerar indicadores para tomada de decisão.",
+        descricao: "Processamento de dados de desempenho estudantil com geração de indicadores para análise e acompanhamento.",
         categoria: "academico",
         imagens: ["../../Imagens/download.png", "../../Imagens/d.png"],
-        tags: ["Python", "Pandas"]
+        tags: ["Python", "Pandas", "Análise de Dados"],
+        repositorio: "https://github.com/rian-dev"
     },
     {
         titulo: "Automação de Planilhas Financeiras",
-        descricao: "Projeto pessoal para consolidar gastos, categorizar lançamentos e apoiar visualizações em dashboard no Excel.",
+        descricao: "Automação de consolidação de gastos com estrutura de categorias e visualização de métricas no Excel.",
         categoria: "pessoal",
         imagens: [],
-        tags: ["Excel", "VBA"]
+        tags: ["Excel", "VBA", "Automação"],
+        repositorio: "https://github.com/rian-dev"
     }
 ];
 
 function renderProjetos(filter = 'all') {
     const list = document.getElementById('project-list');
     if (!list) return;
-
     list.innerHTML = '';
 
-    const projetosFiltrados = meusProjetos.filter(
-        (proj) => filter === 'all' || proj.categoria === filter
-    );
+    const projetosFiltrados = meusProjetos.filter((proj) => filter === 'all' || proj.categoria === filter);
 
     if (!projetosFiltrados.length) {
         list.innerHTML = '<p class="no-image">Nenhum projeto encontrado para este filtro.</p>';
@@ -32,7 +31,7 @@ function renderProjetos(filter = 'all') {
 
     projetosFiltrados.forEach((proj, index) => {
         const tagClass = proj.categoria === 'academico' ? 'tag-tipo-ac' : 'tag-tipo-ps';
-        const tagText = proj.categoria === 'academico' ? '📚 Faculdade' : '💡 Pessoal';
+        const tagText = proj.categoria === 'academico' ? 'Acadêmico' : 'Pessoal';
 
         let areaImagem = '';
         if (proj.imagens && proj.imagens.length > 0) {
@@ -52,7 +51,7 @@ function renderProjetos(filter = 'all') {
                 `;
             }
         } else {
-            areaImagem = '<div class="no-image">Sem imagem disponível</div>';
+            areaImagem = '<div class="no-image">Prévia visual indisponível</div>';
         }
 
         list.innerHTML += `
@@ -65,6 +64,7 @@ function renderProjetos(filter = 'all') {
                     </div>
                     <h3>${proj.titulo}</h3>
                     <p>${proj.descricao}</p>
+                    <div style="margin-top:.8rem;"><a class="nav-back" href="${proj.repositorio}" target="_blank" rel="noopener noreferrer">Repositório</a></div>
                 </div>
             </article>
         `;
@@ -79,12 +79,9 @@ function moveSlide(projIndex, direction) {
     let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
 
     slides[activeIndex].classList.remove('active');
-
     activeIndex += direction;
-
     if (activeIndex >= slides.length) activeIndex = 0;
     if (activeIndex < 0) activeIndex = slides.length - 1;
-
     slides[activeIndex].classList.add('active');
 }
 
@@ -94,6 +91,4 @@ function updateFilter(category, button) {
     renderProjetos(category);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderProjetos();
-});
+document.addEventListener('DOMContentLoaded', () => renderProjetos());
